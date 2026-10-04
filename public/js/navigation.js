@@ -11,8 +11,8 @@ async function render() {
         <a href="archive.html">
             Исследования
         </a>
-        <a href="login.html">
-            Войти
+        <a href="index.html" onclick="fetch('/auth/logout')">
+            Выйти
         </a>
         `
     } else {
@@ -23,8 +23,8 @@ async function render() {
         <a href="archive.html">
             Исследования
         </a>
-        <a href="index.html" onclick="fetch('/auth/logout')">
-            Выйти
+        <a href="enter.html">
+            Войти
         </a>
         `
     }

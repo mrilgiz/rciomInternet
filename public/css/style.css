@@ -79,6 +79,9 @@ header {
 main {
     margin-inline: 20rem;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     section:not(.hero) {
         display: flex;
         flex-direction: column;
@@ -108,4 +111,26 @@ main {
 
 .font2 {
     font-family: 'Verdana', sans-serif;
+}
+
+form#enter {
+    padding: 2rem 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 40dvh;
+    min-width: 30dvh;
+    height: 20dvh;
+    margin-top: 10dvh;
+    label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    button {
+        margin-top: 1rem;
+        width: 100%;
+    }
 }

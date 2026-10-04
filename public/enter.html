@@ -5,9 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Информационный портал РЦИОМ</title>
+    <title>Исследования</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/curcour.js" defer></script>
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
@@ -28,11 +27,20 @@
     </nav>
 </header>
 <main>
-    <section class="hero">
-        <h1 class="font1">РЦИОМ</h1>
-        <h2 class="font1">Региональный Центр Исследования Особых Материалов</h2>
-    </section>
-
+    <h2>Авторизация</h2>
+    <form id="enter">
+        <label>
+            Имя сотрудника / агента
+            <input type="text" name="username" required>
+        </label>
+        <label>
+            Пароль
+            <input type="password" name="password" required>
+        </label>
+        <button>
+            Войти
+        </button>
+    </form>
 </main>
 <footer></footer>
 </body>
