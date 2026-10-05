@@ -6,6 +6,9 @@ const pool = require('./config/db');
 const port=3000;
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //настрйока сессий
 app.use(session({
     secret: 'secret',
@@ -38,9 +41,11 @@ async function seed() {
 }
 seed()
 //подключение маршрутов бекенда
-
+const authMiddleware = require('./middlewares/authMiddleware');
 const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 app.use('/auth',authRoutes);
+app.use('/user',authMiddleware,userRoutes);
 
 //запуск и подключение статики
 

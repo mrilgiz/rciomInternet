@@ -1,110 +1,161 @@
+:root {
+    --color-background: ghostwhite;
+    --color-header-background:  #ffffff;
+    --color-text: black;
+    --color-border: rgb(0 0 0);
+    --color-hover-text: #1c1c1c;
+    --color-secondary-text: #505050;
+    --color-muted-text: lightslategray;
+
+    --color-nav-hover: rgb(211 211 211 / 0.52);
+    --color-transparent: rgb(211 211 211 / 0);
+    --color-profile-hover: rgb(255 255 255);
+}
+
 body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--color-background);
     margin: 0;
     gap: 2rem;
     font-family: 'Courier New', monospace;
 }
+
 /*Навигатор по сайту*/
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: white;
-    border-bottom: 1px solid black;
-    #logo img{
+    background: var(--color-header-background);
+    border-bottom: 1px solid var(--color-border);
+
+    #logo img {
         width: 12rem;
     }
+
     padding-inline: 6rem;
     padding-block: 0.5rem;
+
     nav {
         display: flex;
         flex-direction: row;
         gap: 1rem;
+
         a {
-            background: rgb(211 211 211 / 0);
+            background: var(--color-transparent);
             padding: 0.5rem 1rem;
-            color: black;
+            color: var(--color-text);
             text-decoration: none;
-            transition: 50ms ease-in-out clip-path;;
+            transition: 50ms ease-in-out clip-path;
             font-size: 1.5rem;
-        }
-        a:nth-child(1) {
-            --x1: 17%; --y1: 6%;
-            --x2: 73%; --y2: 0%;
-            --x3: 100%; --y3: 29%;
-            --x4: 87%; --y4: 84%;
-            --x5: 61%; --y5: 100%;
-            --x6: 9%; --y6: 91%;
-            --x7: 0%; --y7: 47%;
+
+            /*05.10.2026*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /*05.10.2026 end*/
         }
 
-        a:nth-child(2) {
-            --x1: 4%; --y1: 18%;
-            --x2: 91%; --y2: 7%;
-            --x3: 100%; --y3: 56%;
-            --x4: 76%; --y4: 100%;
-            --x5: 43%; --y5: 88%;
-            --x6: 12%; --y6: 97%;
-            --x7: 0%; --y7: 63%;
-        }
-
-        a:nth-child(3) {
-            --x1: 11%; --y1: 0%;
-            --x2: 48%; --y2: 14%;
-            --x3: 96%; --y3: 3%;
-            --x4: 100%; --y4: 71%;
-            --x5: 68%; --y5: 100%;
-            --x6: 22%; --y6: 83%;
-            --x7: 0%; --y7: 52%;
-        }
         a:hover {
-            background: rgb(211 211 211 / 0.52);
-            color: #1c1c1c;
+            background: var(--color-nav-hover);
+            color: var(--color-hover-text);
             transform: scale(101%);
-            clip-path: polygon(
-                    var(--x1) var(--y1),
-                    var(--x2) var(--y2),
-                    var(--x3) var(--y3),
-                    var(--x4) var(--y4),
-                    var(--x5) var(--y5),
-                    var(--x6) var(--y6),
-                    var(--x7) var(--y7)
-            );
+        }
+
+        /* profile btn and etc. */
+        div#profile_btn {
+            background: var(--color-transparent);
+            padding: 0.5rem 1rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: 50ms ease-in-out clip-path;
+            font-size: 1.5rem;
+
+            /* 05.10.2026 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            border-top: rgb(0 0 0 / 0) solid 1px;
+            border-inline: rgb(0 0 0 / 0) solid 1px;
+
+            /* 05.10.2026 end */
+
+            width: 8rem;
+            height: 2.5rem;
+
+            p {
+                position: absolute;
+                padding-top: 2rem;
+                font-size: 1rem;
+                color: var(--color-muted-text);
+            }
+
+            div#profile_dropdown {
+                position: absolute;
+                padding-top: 6rem;
+                left: 0;
+                display: none;
+            }
+        }
+
+        div#profile_btn:hover {
+            background: var(--color-profile-hover);
+            color: var(--color-hover-text);
+            transform: scale(100%);
+
+            div#profile_dropdown {
+                display: flex;
+                width: 10rem;
+            }
+
+            div#profile_dropdown_actions {
+                width: 10rem;
+                background: var(--color-profile-hover);
+
+                border-bottom: var(--color-border) solid 1px;
+                border-inline: var(--color-border) solid 1px;
+            }
+
+            border-top: var(--color-border) solid 1px;
+            border-inline: var(--color-border) solid 1px;
         }
     }
 }
+
 main {
     margin-inline: 20rem;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     section:not(.hero) {
         display: flex;
         flex-direction: column;
-        border-block: 1px solid black;
+        border-block: 1px solid var(--color-border);
     }
+
     section.hero {
         height: 75dvh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         h1 {
-            margin:0;
+            margin: 0;
             padding: 0;
         }
 
         h2 {
-            color: #505050;
+            color: var(--color-secondary-text);
             font-style: unset;
         }
-
     }
 }
+
 .font1 {
     font-family: 'Courier New', monospace;
 }
@@ -115,7 +166,7 @@ main {
 
 form#enter {
     padding: 2rem 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,11 +175,13 @@ form#enter {
     min-width: 30dvh;
     height: 20dvh;
     margin-top: 10dvh;
+
     label {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
+
     button {
         margin-top: 1rem;
         width: 100%;
